@@ -12,7 +12,7 @@ export function CodeBlock({ lines, label }: CodeBlockProps) {
   return (
     <div className="code-block">
       {label && (
-        <div className="px-4 py-2 border-b border-zinc-800 bg-zinc-900/60 text-xs text-zinc-500 font-mono">
+        <div className="px-4 py-2 border-b border-stone-200 bg-stone-100 text-xs text-stone-400 font-mono">
           {label}
         </div>
       )}

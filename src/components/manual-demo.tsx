@@ -30,14 +30,14 @@ export function ManualDemo() {
           onClick={show}
           disabled={isOpen}
           style={{ anchorName: "--manual-trigger" } as React.CSSProperties}
-          className="px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium transition-colors"
+          className="px-4 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium transition-colors"
         >
           Show notification
         </button>
         <button
           onClick={hide}
           disabled={!isOpen}
-          className="px-4 py-2 rounded-lg bg-zinc-700 hover:bg-zinc-600 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium transition-colors"
+          className="px-4 py-2 rounded-lg bg-stone-200 hover:bg-stone-300 disabled:opacity-40 disabled:cursor-not-allowed text-stone-700 text-sm font-medium transition-colors"
         >
           Dismiss
         </button>
@@ -51,26 +51,26 @@ export function ManualDemo() {
           onToggle={onToggle}
           className="popover-manual"
         >
-          <p className="text-sm font-medium text-zinc-100 mb-1">Manual mode</p>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <p className="text-sm font-medium text-stone-900 mb-1">Manual mode</p>
+          <p className="text-xs text-stone-500 leading-relaxed">
             This popover will{" "}
-            <strong className="text-zinc-200">not</strong> close on Escape
+            <strong className="text-stone-700">not</strong> close on Escape
             or outside click. You own the lifecycle.
           </p>
           <button
             onClick={hide}
-            className="mt-3 text-xs text-violet-400 hover:text-violet-300 transition-colors"
+            className="mt-3 text-xs text-amber-700 hover:text-amber-600 transition-colors"
           >
             Close via JS &rarr;
           </button>
         </div>
       </div>
 
-      <p className="text-xs text-zinc-500">
+      <p className="text-xs text-stone-500">
         State:{" "}
-        <code className="text-violet-400">{isOpen ? "open" : "closed"}</code>
+        <code className="text-amber-700">{isOpen ? "open" : "closed"}</code>
         {" "}— synced via the{" "}
-        <code className="text-violet-400">toggle</code> event, not a React
+        <code className="text-amber-700">toggle</code> event, not a React
         useState workaround.
       </p>
     </div>

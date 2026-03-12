@@ -34,15 +34,15 @@ export default function Home() {
     <main className="max-w-3xl mx-auto px-5 py-20 space-y-24">
       {/* ── Hero ── */}
       <header className="space-y-5">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-xs text-violet-400 font-mono">
+        <p className="text-xs text-stone-400 font-mono uppercase tracking-widest">
           Popover API
-        </div>
-        <h1 className="text-4xl font-semibold tracking-tight text-zinc-50 leading-tight">
+        </p>
+        <h1 className="text-4xl tracking-tight text-stone-900 leading-tight">
           The browser already
           <br />
           understands popovers.
         </h1>
-        <p className="text-zinc-400 leading-relaxed max-w-xl">
+        <p className="text-stone-500 leading-relaxed max-w-xl">
           What happens if you rebuild a tooltip using the browser&apos;s native
           model — without a library? Opening and closing, keyboard interaction,
           Escape handling, and much of the accessibility now come from the
@@ -53,16 +53,16 @@ export default function Home() {
       {/* ── The library tax ── */}
       <section className="space-y-6">
         <SectionLabel label="01" />
-        <h2 className="text-xl font-semibold text-zinc-100">
+        <h2 className="text-xl text-stone-900">
           What you used to reach for
         </h2>
-        <p className="text-zinc-400 text-sm leading-relaxed">
+        <p className="text-stone-500 text-sm leading-relaxed">
           A single accessible tooltip used to require one or more of these. Each
           solves a real problem the browser didn&apos;t own. Now it does.
         </p>
 
-        <div className="divide-y divide-zinc-800 border border-zinc-800 rounded-lg overflow-hidden">
-          <div className="grid grid-cols-3 px-4 py-2.5 bg-zinc-900 text-xs text-zinc-500 font-mono">
+        <div className="divide-y divide-stone-200 border border-stone-200 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-3 px-4 py-2.5 bg-stone-100 text-xs text-stone-400 font-mono">
             <span>package</span>
             <span>min+gzip</span>
             <span>why it existed</span>
@@ -70,28 +70,28 @@ export default function Home() {
           {libraryWeights.map((lib) => (
             <div
               key={lib.name}
-              className="grid grid-cols-3 px-4 py-3 text-sm hover:bg-zinc-900/50 transition-colors"
+              className="grid grid-cols-3 px-4 py-3 text-sm hover:bg-stone-50 transition-colors"
             >
-              <code className="text-zinc-200 text-xs">{lib.name}</code>
-              <span className="text-orange-400 font-mono text-xs">
+              <code className="text-stone-800 text-xs">{lib.name}</code>
+              <span className="text-amber-700 font-mono text-xs">
                 {lib.size}
               </span>
-              <span className="text-zinc-500 text-xs">{lib.note}</span>
+              <span className="text-stone-400 text-xs">{lib.note}</span>
             </div>
           ))}
         </div>
 
-        <p className="text-xs text-zinc-600">
+        <p className="text-xs text-stone-400">
           These libraries are well-engineered — but when the need is a simple
           tooltip with keyboard support and ARIA, the browser now covers that.
         </p>
 
         {/* DIY tooltip — live demo of what a library wraps */}
         <div className="space-y-3">
-          <p className="text-xs text-zinc-500 font-medium uppercase tracking-widest">
+          <p className="text-xs text-stone-400 font-medium uppercase tracking-widest">
             DIY approach — no library, just React
           </p>
-          <p className="text-zinc-500 text-sm leading-relaxed">
+          <p className="text-stone-500 text-sm leading-relaxed">
             Before libraries (and before the browser owned this), this is what
             you wrote. Every feature below is a hand-rolled workaround for
             something the browser didn&apos;t understand.
@@ -102,18 +102,18 @@ export default function Home() {
 
       {/* ── Divider ── */}
       <div className="flex items-center gap-4">
-        <div className="flex-1 h-px bg-zinc-800" />
-        <span className="text-zinc-600 text-xs font-mono">vs</span>
-        <div className="flex-1 h-px bg-zinc-800" />
+        <div className="flex-1 h-px bg-stone-200" />
+        <span className="text-stone-400 text-xs font-mono">vs</span>
+        <div className="flex-1 h-px bg-stone-200" />
       </div>
 
       {/* ── The native equivalent ── */}
       <section className="space-y-6">
         <SectionLabel label="02" />
-        <h2 className="text-xl font-semibold text-zinc-100">
+        <h2 className="text-xl text-stone-900">
           The native equivalent
         </h2>
-        <p className="text-zinc-400 text-sm leading-relaxed">
+        <p className="text-stone-500 text-sm leading-relaxed">
           Libraries like Radix UI wrapped all that DIY machinery into a clean
           API. That was a real improvement. But now the browser owns those same
           semantics — so the library exists to solve a problem that no longer
@@ -123,7 +123,7 @@ export default function Home() {
         {/* Radix vs Native code comparison */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="space-y-2">
-            <p className="text-xs text-zinc-600 font-mono">
+            <p className="text-xs text-stone-400 font-mono">
               library — @radix-ui/react-tooltip
             </p>
             <CodeBlock
@@ -211,7 +211,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-2">
-            <p className="text-xs text-zinc-600 font-mono">
+            <p className="text-xs text-stone-400 font-mono">
               native — 0 kB of JavaScript
             </p>
             <CodeBlock
@@ -274,7 +274,7 @@ export default function Home() {
           ].map((feat) => (
             <span
               key={feat}
-              className="px-2.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-xs text-violet-400"
+              className="px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-xs text-amber-700"
             >
               {feat} — browser
             </span>
@@ -283,38 +283,38 @@ export default function Home() {
 
         {/* Live demo */}
         <div className="space-y-3">
-          <p className="text-xs text-zinc-500 font-medium uppercase tracking-widest">
+          <p className="text-xs text-stone-400 font-medium uppercase tracking-widest">
             Live demo — declarative, zero JS
           </p>
           <div className="demo-stage">
             <div className="flex flex-col items-center gap-3">
               <button
                 popoverTarget="demo-tip-1"
-                className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-sm text-zinc-100 transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-lg bg-white hover:bg-stone-50 border border-stone-300 text-sm text-stone-800 transition-colors cursor-pointer shadow-sm"
               >
                 Save
               </button>
-              <span className="text-xs text-zinc-600">
+              <span className="text-xs text-stone-400">
                 Click to toggle &middot; Esc to close &middot; click outside to close
               </span>
             </div>
 
             <div id="demo-tip-1" popover="auto" className="popover-card">
-              <p className="text-sm font-medium text-zinc-100 mb-1.5">
+              <p className="text-sm font-medium text-stone-900 mb-1.5">
                 Keyboard shortcut
               </p>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <p className="text-xs text-stone-500 leading-relaxed">
                 Press{" "}
-                <kbd className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 font-mono text-xs border border-zinc-700">
+                <kbd className="px-1.5 py-0.5 rounded bg-stone-100 text-stone-600 font-mono text-xs border border-stone-300">
                   Ctrl
                 </kbd>
                 +
-                <kbd className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 font-mono text-xs border border-zinc-700">
+                <kbd className="px-1.5 py-0.5 rounded bg-stone-100 text-stone-600 font-mono text-xs border border-stone-300">
                   S
                 </kbd>{" "}
                 to save.
               </p>
-              <p className="text-xs text-zinc-600 mt-3">
+              <p className="text-xs text-stone-400 mt-3">
                 No JS. aria-expanded managed by the browser.
               </p>
             </div>
@@ -325,9 +325,9 @@ export default function Home() {
       {/* ── auto vs manual ── */}
       <section className="space-y-6">
         <SectionLabel label="03" />
-        <h2 className="text-xl font-semibold text-zinc-100">
-          <code className="text-violet-400 text-lg">auto</code> vs{" "}
-          <code className="text-violet-400 text-lg">manual</code>
+        <h2 className="text-xl text-stone-900">
+          <code className="text-amber-700 text-lg font-mono">auto</code> vs{" "}
+          <code className="text-amber-700 text-lg font-mono">manual</code>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -355,7 +355,7 @@ export default function Home() {
         </div>
 
         <div className="space-y-3">
-          <p className="text-xs text-zinc-500 font-medium uppercase tracking-widest">
+          <p className="text-xs text-stone-400 font-medium uppercase tracking-widest">
             Live demo — manual mode
           </p>
           <ManualDemo />
@@ -365,23 +365,23 @@ export default function Home() {
       {/* ── Multiple popovers ── */}
       <section className="space-y-6">
         <SectionLabel label="04" />
-        <h2 className="text-xl font-semibold text-zinc-100">
+        <h2 className="text-xl text-stone-900">
           The browser manages the stack
         </h2>
-        <p className="text-zinc-400 text-sm leading-relaxed">
-          With <code className="text-violet-400">popover=&quot;auto&quot;</code>,
+        <p className="text-stone-500 text-sm leading-relaxed">
+          With <code className="text-amber-700">popover=&quot;auto&quot;</code>,
           opening a new popover automatically closes the previous one. This is
           the browser&apos;s native{" "}
           <a
             href="https://developer.mozilla.org/en-US/docs/Glossary/Top_layer"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-violet-400 hover:text-violet-300 underline underline-offset-2"
+            className="text-amber-700 hover:text-amber-600 underline underline-offset-2"
           >
             top-layer
           </a>{" "}
           stack — the same mechanism used by{" "}
-          <code className="text-violet-400">&lt;dialog&gt;</code>.
+          <code className="text-amber-700">&lt;dialog&gt;</code>.
         </p>
         <MultiplePopovers />
       </section>
@@ -389,12 +389,12 @@ export default function Home() {
       {/* ── CSS hooks ── */}
       <section className="space-y-6">
         <SectionLabel label="05" />
-        <h2 className="text-xl font-semibold text-zinc-100">
+        <h2 className="text-xl text-stone-900">
           CSS you get for free
         </h2>
-        <p className="text-zinc-400 text-sm leading-relaxed">
+        <p className="text-stone-500 text-sm leading-relaxed">
           Three CSS primitives ship with the Popover API. No class toggling, no{" "}
-          <code className="text-violet-400">data-state</code> attributes, no
+          <code className="text-amber-700">data-state</code> attributes, no
           portal components, no animation libraries.
         </p>
 
@@ -404,13 +404,13 @@ export default function Home() {
       {/* ── toggle event ── */}
       <section className="space-y-6">
         <SectionLabel label="06" />
-        <h2 className="text-xl font-semibold text-zinc-100">
-          The <code className="text-violet-400">toggle</code> event
+        <h2 className="text-xl text-stone-900">
+          The <code className="text-amber-700 font-mono">toggle</code> event
         </h2>
-        <p className="text-zinc-400 text-sm leading-relaxed">
+        <p className="text-stone-500 text-sm leading-relaxed">
           When you do need JavaScript — to sync external state, fire analytics,
           or run an animation — the{" "}
-          <code className="text-violet-400">toggle</code> event gives you a
+          <code className="text-amber-700">toggle</code> event gives you a
           reliable signal regardless of <em>how</em> the popover was opened or
           closed (Escape, outside click, JS call, or button press).
         </p>
@@ -466,10 +466,10 @@ export default function Home() {
       {/* ── When libraries are still worth it ── */}
       <section className="space-y-6">
         <SectionLabel label="07" />
-        <h2 className="text-xl font-semibold text-zinc-100">
+        <h2 className="text-xl text-stone-900">
           When a library is still the right call
         </h2>
-        <p className="text-zinc-400 text-sm leading-relaxed">
+        <p className="text-stone-500 text-sm leading-relaxed">
           The Popover API doesn&apos;t do everything. Three real cases where a
           library earns its weight:
         </p>
@@ -494,14 +494,14 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="pt-12 border-t border-zinc-800 text-xs text-zinc-600 space-y-2">
+      <footer className="pt-12 border-t border-stone-200 text-xs text-stone-400 space-y-2">
         <p>
           Browser support: Chrome 114+, Firefox 125+, Safari 17+ &mdash;{" "}
           <a
             href="https://caniuse.com/mdn-html_global_attributes_popover"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-violet-500 hover:text-violet-400 underline underline-offset-2"
+            className="text-amber-700 hover:text-amber-600 underline underline-offset-2"
           >
             caniuse
           </a>
@@ -512,7 +512,7 @@ export default function Home() {
             href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-violet-500 hover:text-violet-400 underline underline-offset-2"
+            className="text-amber-700 hover:text-amber-600 underline underline-offset-2"
           >
             MDN Popover API
           </a>
@@ -521,7 +521,7 @@ export default function Home() {
             href="https://www.smashingmagazine.com/2026/03/getting-started-popover-api/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-violet-500 hover:text-violet-400 underline underline-offset-2"
+            className="text-amber-700 hover:text-amber-600 underline underline-offset-2"
           >
             Smashing Magazine
           </a>
@@ -534,7 +534,7 @@ export default function Home() {
 // ─── Local components ────────────────────────────────────────────────────────
 
 function SectionLabel({ label }: { label: string }) {
-  return <span className="font-mono text-xs text-zinc-600">{label}</span>;
+  return <span className="font-mono text-xs text-stone-400">{label}</span>;
 }
 
 function FeatureCard({
@@ -548,17 +548,17 @@ function FeatureCard({
 }) {
   const accent =
     variant === "default"
-      ? "bg-violet-500/10 border-violet-500/20"
-      : "bg-zinc-800/50 border-zinc-700/50";
+      ? "bg-amber-50 border-amber-200"
+      : "bg-stone-100 border-stone-200";
   const dotColor =
-    variant === "default" ? "bg-violet-500" : "bg-zinc-600";
+    variant === "default" ? "bg-amber-600" : "bg-stone-400";
 
   return (
     <div className={`rounded-lg border p-4 space-y-3 ${accent}`}>
-      <code className="text-sm font-medium text-zinc-200">{title}</code>
+      <code className="text-sm font-medium text-stone-800">{title}</code>
       <ul className="space-y-1.5">
         {features.map((f) => (
-          <li key={f} className="flex items-start gap-2 text-xs text-zinc-400">
+          <li key={f} className="flex items-start gap-2 text-xs text-stone-500">
             <span
               className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${dotColor}`}
             />
@@ -580,16 +580,16 @@ function LibraryStillWorthIt({
   lib: string;
 }) {
   return (
-    <div className="flex gap-4 p-4 rounded-lg border border-zinc-800 bg-zinc-900/40">
-      <div className="mt-0.5 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0 mt-1" />
+    <div className="flex gap-4 p-4 rounded-lg border border-stone-200 bg-stone-50">
+      <div className="mt-1 w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" />
       <div className="space-y-1.5 min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <p className="text-sm font-medium text-zinc-200">{title}</p>
-          <code className="text-xs text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded border border-orange-500/20">
+          <p className="text-sm font-medium text-stone-800">{title}</p>
+          <code className="text-xs text-orange-700 bg-orange-50 px-1.5 py-0.5 rounded border border-orange-200">
             {lib}
           </code>
         </div>
-        <p className="text-xs text-zinc-500 leading-relaxed">{description}</p>
+        <p className="text-xs text-stone-500 leading-relaxed">{description}</p>
       </div>
     </div>
   );

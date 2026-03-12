@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* ─── Serif headings ──────────────────────────────────────────────── */
+h1, h2 {
+  font-family: var(--font-serif);
+}
+
 /* ─── Popover resets ──────────────────────────────────────────────── */
 [popover] {
   /* Override browser UA stylesheet */
@@ -16,25 +21,25 @@
 /* ─── Tooltip popover ─────────────────────────────────────────────── */
 .popover-tooltip {
   padding: 0.4rem 0.75rem;
-  background: #18181b;
-  border: 1px solid #3f3f46;
+  background: #ffffff;
+  border: 1px solid #d6d3cf;
   border-radius: 6px;
   font-size: 0.8125rem;
   line-height: 1.4;
-  color: #f4f4f5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #1c1917;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 260px;
 }
 
 /* ─── Info popover (card-style) ───────────────────────────────────── */
 .popover-card {
   padding: 1.25rem 1.5rem;
-  background: #18181b;
-  border: 1px solid #3f3f46;
+  background: #ffffff;
+  border: 1px solid #d6d3cf;
   border-radius: 10px;
   font-size: 0.9rem;
-  color: #f4f4f5;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  color: #1c1917;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   max-width: 320px;
   /* CSS Anchor Positioning — pins below the invoking button */
   top: anchor(bottom);
@@ -45,11 +50,11 @@
 /* ─── Manual popover ──────────────────────────────────────────────── */
 .popover-manual {
   padding: 1.25rem 1.5rem;
-  background: #18181b;
-  border: 1px solid #52525b;
+  background: #ffffff;
+  border: 1px solid #d6d3cf;
   border-radius: 10px;
-  color: #f4f4f5;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  color: #1c1917;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   width: 280px;
   /* CSS Anchor Positioning — pins below the invoking button */
   position-anchor: --manual-trigger;
@@ -71,12 +76,12 @@
 /* ─── CSS demo: :popover-open state selector ──────────────────────── */
 .css-state-popover {
   padding: 1.25rem 1.5rem;
-  background: #18181b;
+  background: #ffffff;
   /* Default border — neutral */
-  border: 1px solid #3f3f46;
+  border: 1px solid #d6d3cf;
   border-radius: 10px;
-  color: #f4f4f5;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  color: #1c1917;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   max-width: 300px;
   /* CSS Anchor Positioning — pins below the invoking button */
   top: anchor(bottom);
@@ -88,18 +93,18 @@
 
 /* The only selector that fires when the popover is open — no JS, no class */
 .css-state-popover:popover-open {
-  border-color: #7c3aed;
-  box-shadow: 0 0 0 1px #7c3aed, 0 8px 32px rgba(124, 58, 237, 0.3);
+  border-color: #b45309;
+  box-shadow: 0 0 0 1px #b45309, 0 8px 32px rgba(180, 83, 9, 0.15);
 }
 
 /* ─── CSS demo: ::backdrop ────────────────────────────────────────── */
 .css-backdrop-popover {
   padding: 1.25rem 1.5rem;
-  background: #18181b;
-  border: 1px solid #3f3f46;
+  background: #ffffff;
+  border: 1px solid #d6d3cf;
   border-radius: 10px;
-  color: #f4f4f5;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  color: #1c1917;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   max-width: 300px;
   /* CSS Anchor Positioning — pins below the invoking button */
   top: anchor(bottom);
@@ -109,24 +114,24 @@
 
 /* Browser generates this pseudo-element automatically for top-layer elements */
 .css-backdrop-popover::backdrop {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);
 }
 
 /* ─── CSS demo: @starting-style entry + discrete exit animation ───── */
 .css-anim-popover {
   padding: 1.25rem 1.5rem;
-  background: #18181b;
-  border: 1px solid #3f3f46;
+  background: #ffffff;
+  border: 1px solid #d6d3cf;
   border-radius: 10px;
-  color: #f4f4f5;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  color: #1c1917;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   max-width: 300px;
   /* CSS Anchor Positioning — pins below the invoking button */
   top: anchor(bottom);
   left: anchor(center);
 
-  /* Open state target */
+  /* Target open state */
   opacity: 1;
   translate: -50% 8px;
   /* allow-discrete lets us transition through display:none (the exit) */
@@ -154,8 +159,8 @@
 /* ─── Code block chrome ───────────────────────────────────────────── */
 .code-block {
   position: relative;
-  background: #0a0a0a;
-  border: 1px solid #27272a;
+  background: #f8f7f4;
+  border: 1px solid #e7e5e0;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -165,20 +170,20 @@
   padding: 1.25rem 1.5rem;
   font-size: 0.8125rem;
   line-height: 1.7;
-  color: #e4e4e7;
+  color: #292524;
   tab-size: 2;
 }
 
 /* syntax token colours */
-.token-tag    { color: #f87171; }
-.token-attr   { color: #93c5fd; }
-.token-value  { color: #86efac; }
-.token-kw     { color: #c084fc; }
-.token-fn     { color: #67e8f9; }
-.token-str    { color: #86efac; }
-.token-cmt    { color: #52525b; font-style: italic; }
-.token-import { color: #fbbf24; }
-.token-pkg    { color: #fb923c; }
+.token-tag    { color: #dc2626; }
+.token-attr   { color: #2563eb; }
+.token-value  { color: #16a34a; }
+.token-kw     { color: #7c3aed; }
+.token-fn     { color: #0891b2; }
+.token-str    { color: #16a34a; }
+.token-cmt    { color: #a8a29e; font-style: italic; }
+.token-import { color: #d97706; }
+.token-pkg    { color: #ea580c; }
 
 /* ─── Demo stage ──────────────────────────────────────────────────── */
 .demo-stage {
@@ -187,8 +192,8 @@
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  background: #09090b;
-  border: 1px solid #27272a;
+  background: #f5f4f1;
+  border: 1px solid #e7e5e0;
   border-radius: 8px;
   padding: 2.5rem 1.5rem;
   min-height: 120px;

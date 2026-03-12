@@ -32,15 +32,15 @@ export function MultiplePopovers() {
           <div key={item.id} className="relative">
             <button
               popoverTarget={item.id}
-              className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-sm text-zinc-100 transition-colors cursor-pointer"
+              className="px-4 py-2 rounded-lg bg-white hover:bg-stone-50 border border-stone-300 text-sm text-stone-800 transition-colors cursor-pointer shadow-sm"
             >
               {item.label}
             </button>
             <div id={item.id} popover="auto" className="popover-card">
-              <p className="font-medium text-sm text-zinc-100 mb-1.5">
+              <p className="font-medium text-sm text-stone-900 mb-1.5">
                 {item.label}
               </p>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <p className="text-xs text-stone-500 leading-relaxed">
                 {item.content}
               </p>
             </div>
@@ -48,7 +48,7 @@ export function MultiplePopovers() {
         ))}
       </div>
 
-      <p className="text-xs text-zinc-500">
+      <p className="text-xs text-stone-500">
         Open one, then open another. The first closes automatically — zero
         JavaScript.
       </p>

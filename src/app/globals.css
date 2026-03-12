@@ -1,26 +1,190 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Popover resets ──────────────────────────────────────────────── */
+[popover] {
+  /* Override browser UA stylesheet */
+  position: fixed;
+  inset: unset;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  overflow: visible;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Tooltip popover ─────────────────────────────────────────────── */
+.popover-tooltip {
+  padding: 0.4rem 0.75rem;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: #f4f4f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  max-width: 260px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Info popover (card-style) ───────────────────────────────────── */
+.popover-card {
+  padding: 1.25rem 1.5rem;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #f4f4f5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  max-width: 320px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+/* ─── Manual popover ──────────────────────────────────────────────── */
+.popover-manual {
+  padding: 1.25rem 1.5rem;
+  background: #18181b;
+  border: 1px solid #52525b;
+  border-radius: 10px;
+  color: #f4f4f5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  width: 280px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+/* ─── Entry animation (all popovers) ─────────────────────────────── */
+[popover]:popover-open {
+  animation: popover-in 180ms ease both;
+}
+
+@keyframes popover-in {
+  from { opacity: 0; translate: 0 4px; }
+  to   { opacity: 1; translate: 0 0;   }
+}
+
+/* ─── CSS demo: :popover-open state selector ──────────────────────── */
+.css-state-popover {
+  padding: 1.25rem 1.5rem;
+  background: #18181b;
+  /* Default border — neutral */
+  border: 1px solid #3f3f46;
+  border-radius: 10px;
+  color: #f4f4f5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  /* Smooth the border-color change */
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* The only selector that fires when the popover is open — no JS, no class */
+.css-state-popover:popover-open {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 1px #7c3aed, 0 8px 32px rgba(124, 58, 237, 0.3);
+}
+
+/* ─── CSS demo: ::backdrop ────────────────────────────────────────── */
+.css-backdrop-popover {
+  padding: 1.25rem 1.5rem;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 10px;
+  color: #f4f4f5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+/* Browser generates this pseudo-element automatically for top-layer elements */
+.css-backdrop-popover::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+/* ─── CSS demo: @starting-style entry + discrete exit animation ───── */
+.css-anim-popover {
+  padding: 1.25rem 1.5rem;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 10px;
+  color: #f4f4f5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  /* Target open state with transition */
+  opacity: 1;
+  translate: -50% -50%;
+  /* allow-discrete lets us transition through display:none (the exit) */
+  transition:
+    opacity 200ms ease,
+    translate 200ms ease,
+    display 200ms allow-discrete,
+    overlay 200ms allow-discrete;
+}
+
+/* Entry: define where the animation starts from */
+@starting-style {
+  .css-anim-popover:popover-open {
+    opacity: 0;
+    translate: -50% calc(-50% + 8px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Exit: when no longer :popover-open, transition to this */
+.css-anim-popover:not(:popover-open) {
+  opacity: 0;
+  translate: -50% calc(-50% + 8px);
+}
+
+/* ─── Code block chrome ───────────────────────────────────────────── */
+.code-block {
+  position: relative;
+  background: #0a0a0a;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.code-block pre {
+  overflow-x: auto;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: #e4e4e7;
+  tab-size: 2;
+}
+
+/* syntax token colours */
+.token-tag    { color: #f87171; }
+.token-attr   { color: #93c5fd; }
+.token-value  { color: #86efac; }
+.token-kw     { color: #c084fc; }
+.token-fn     { color: #67e8f9; }
+.token-str    { color: #86efac; }
+.token-cmt    { color: #52525b; font-style: italic; }
+.token-import { color: #fbbf24; }
+.token-pkg    { color: #fb923c; }
+
+/* ─── Demo stage ──────────────────────────────────────────────────── */
+.demo-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 2.5rem 1.5rem;
+  min-height: 120px;
 }

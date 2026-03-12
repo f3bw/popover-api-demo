@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 export function ManualDemo() {
   const popoverRef = useRef<HTMLDivElement>(null);
@@ -29,6 +29,7 @@ export function ManualDemo() {
         <button
           onClick={show}
           disabled={isOpen}
+          style={{ anchorName: "--manual-trigger" } as React.CSSProperties}
           className="px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium transition-colors"
         >
           Show notification
